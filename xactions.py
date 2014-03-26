@@ -1404,6 +1404,26 @@ class _vi_equal_equal(ViTextCommandBase):
         regions_transformer(self.view, f)
         self.enter_normal_mode(mode)
 
+class _vi_backslash_backslash(ViTextCommandBase):
+    def run(self, edit, mode=None, count=1):
+        def f(view, s):
+            return sublime.Region(s.begin())
+
+        def select():
+            s0 = self.view.sel()[0]
+            end_row = utils.row_at(self.view, s0.b) + (count - 1)
+            self.view.sel().clear()
+            self.view.sel().add(sublime.Region(s0.begin(),
+                                self.view.text_point(end_row, 1)))
+
+        if count > 1:
+            select()
+
+        self.view.run_command('toggle_comment', {'block': False})
+
+        regions_transformer(self.view, f)
+        self.enter_normal_mode(mode)
+
 
 class _vi_greater_than_greater_than(ViTextCommandBase):
     def run(self, edit, mode=None, count=1):
@@ -1476,6 +1496,21 @@ class _vi_equal(ViTextCommandBase):
         regions_transformer(self.view, f)
         self.enter_normal_mode(mode)
 
+class _vi_backslash(ViTextCommandBase):
+    def run(self, edit, mode=None, count=1, motion=None):
+        def f(view, s):
+            return sublime.Region(s.begin())
+
+        if motion:
+            self.view.run_command(motion['motion'], motion['motion_args'])
+        elif mode not in (modes.VISUAL, modes.VISUAL_LINE):
+            utils.blink()
+            return
+
+        self.view.run_command('toggle_comment', {'block': False})
+
+        regions_transformer(self.view, f)
+        self.enter_normal_mode(mode)
 
 class _vi_big_o(ViTextCommandBase):
     def run(self, edit, count=1, mode=None):

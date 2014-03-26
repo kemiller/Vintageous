@@ -39,6 +39,8 @@ class cmds:
     ENTER =                        'vi_enter'
     EQUAL =                        'vi_equal'
     EQUAL_EQUAL =                  'vi_equal_equal'
+    BACKSLASH =                    'vi_backslash'
+    BACKSLASH_BACKSLASH =          'vi_backslash_backslash'
     ESC =                          'vi_esc'
     EXCLAMATION =                  'vi_exclamation'
     F =                            'vi_f'
@@ -360,6 +362,7 @@ cmd_defs = {
         cmds.CTRL_V:                    dict(name=cmds.CTRL_V,                      input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=True, repeatable=False),
         cmds.D:                         dict(name=cmds.D,                           input=None,                 type=cmd_types.ACTION, motion_required=True, multi_step=False, repeatable=True),
         cmds.EQUAL:                     dict(name=cmds.EQUAL,                       input=None,                 type=cmd_types.ACTION, motion_required=True, multi_step=True, repeatable=True),
+        cmds.BACKSLASH:                 dict(name=cmds.BACKSLASH,                   input=None,                 type=cmd_types.ACTION, motion_required=True, multi_step=True, repeatable=True),
         cmds.G_BIG_U:                   dict(name=cmds.G_BIG_U,                     input=None,                 type=cmd_types.ACTION, motion_required=True, multi_step=False, repeatable=True),
         cmds.G_BIG_U_BIG_U:             dict(name=cmds.G_BIG_U_BIG_U,               input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
         cmds.G_BIG_U_G_BIG_U:           dict(name=cmds.G_BIG_U_G_BIG_U,             input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
@@ -394,6 +397,7 @@ cmd_defs = {
         cmds.BIG_S:                     dict(name=cmds.BIG_S,                       input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
         cmds.CC:                        dict(name=cmds.CC,                          input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
         cmds.EQUAL_EQUAL:               dict(name=cmds.EQUAL_EQUAL,                 input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
+        cmds.BACKSLASH_BACKSLASH:       dict(name=cmds.BACKSLASH_BACKSLASH,         input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
         cmds.G_TILDE_G_TILDE:           dict(name=cmds.G_TILDE_G_TILDE,             input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
         cmds.G_TILDE_TILDE:             dict(name=cmds.G_TILDE_G_TILDE,             input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),
         cmds.GREATER_THAN_GREATER_THAN: dict(name=cmds.GREATER_THAN_GREATER_THAN,   input=None,                 type=cmd_types.ACTION, motion_required=False, multi_step=False, repeatable=True),

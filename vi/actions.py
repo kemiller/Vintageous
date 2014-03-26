@@ -319,6 +319,12 @@ def vi_equal_equal(state, **kwargs):
 
     return cmd
 
+def vi_backslash_backslash(state, **kwargs):
+    cmd = {}
+    cmd['action'] = '_vi_backslash_backslash'
+    cmd['action_args'] = {'mode': state.mode, 'count': state.count}
+
+    return cmd
 
 def vi_greater_than_greater_than(state, **kwargs):
     cmd = {}
@@ -345,6 +351,13 @@ def vi_less_than(state, **kwargs):
 def vi_equal(state, **kwargs):
     cmd = {}
     cmd['action'] = '_vi_equal'
+    cmd['action_args'] = {'mode': state.mode, 'count': state.count}
+
+    return cmd
+
+def vi_backslash(state, **kwargs):
+    cmd = {}
+    cmd['action'] = '_vi_backslash'
     cmd['action_args'] = {'mode': state.mode, 'count': state.count}
 
     return cmd

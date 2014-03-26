@@ -172,6 +172,7 @@
 	{ "keys": ["~"], "command": "set_action", "args": {"action": "vi_tilde"}, "context": [{"key": "vi_mode_normal_or_any_visual"}] },
 
 	{ "keys": ["="], "command": "set_action", "args": {"action": "vi_equals"}, "context": [{"key": "vi_mode_normal_or_any_visual"}] },
+	{ "keys": ["backslash"], "command": "set_action", "args": {"action": "vi_backslash"}, "context": [{"key": "vi_mode_normal_or_any_visual"}] },
 
 	// These come after the ones above so we don't need extra context checks.
 	{ "keys": ["o"], "command": "set_action", "args": {"action": "vi_visual_o"}, "context": [{"key": "vi_mode_visual_any"}] },

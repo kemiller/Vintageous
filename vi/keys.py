@@ -133,6 +133,8 @@ class seqs:
     SHIFT_ENTER =                  '<S-cr>'
     EQUAL =                        '='
     EQUAL_EQUAL =                  '=='
+    BACKSLASH =                    '\\'
+    BACKSLASH_BACKSLASH =          '\\\\'
     ESC =                          '<esc>'
     F =                            'f'
     F1 =                           '<f1>'
@@ -321,6 +323,8 @@ mappings = {
         seqs.ENTER:                     cmd_defs[modes.NORMAL][cmds.ENTER],
         seqs.EQUAL:                     cmd_defs[modes.NORMAL][cmds.EQUAL],
         seqs.EQUAL_EQUAL:               cmd_defs[modes.NORMAL][cmds.EQUAL_EQUAL],
+        seqs.BACKSLASH:                 cmd_defs[modes.NORMAL][cmds.BACKSLASH],
+        seqs.BACKSLASH_BACKSLASH:       cmd_defs[modes.NORMAL][cmds.BACKSLASH_BACKSLASH],
         seqs.ESC:                       cmd_defs[modes.NORMAL][cmds.ESC],
         seqs.F11:                       cmd_defs[modes.NORMAL][cmds.F11],
         seqs.F12:                       cmd_defs[modes.NORMAL][cmds.F12],
